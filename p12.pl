@@ -55,24 +55,17 @@ changePlan(Plan) :- retractall(planRestant(_)), assert(planRestant(Plan)).
 %Actions possibles à effectuer
 %Par Robin Cavalieri
 %----------------------------------------------------------
-%Monter
-bouger(mov_monter).
-%Descendre
-bouger(mov_descendre).
-%Gauche
-bouger(mov_gauche).
-%Droite
-bouger(mov_droite).
-%Diagonale haute droite
-bouger(mov_DHdroite).
-%Diagonale haute gauche
-bouger(mov_DHgauche).
-%Diagonale bas droite
-bouger(mov_DBdroite).
-%Diagonale bas gauche
-bouger(mov_DBgauche).
+%Se déplacer 8 possibilités
+bouger(mov_monter).    %Monter
+bouger(mov_descendre). %Descendre
+bouger(mov_gauche).    %Gauche
+bouger(mov_droite).    %Droite
+bouger(mov_DHdroite).  %Diagonale haute droite
+bouger(mov_DHgauche).  %Diagonale haute gauche
+bouger(mov_DBdroite).  %Diagonale bas droite
+bouger(mov_DBgauche).  %Diagonale bas gauche
 
-%Prendre
+%Prendre 8 possibilités
 prendre(p_haut).    %haut
 prendre(p_bas).     %bas
 prendre(p_gauche).  %gauche
@@ -82,7 +75,7 @@ prendre(p_DHgauche).%diagonale haut gauche
 prendre(p_DBdroite).%diagonale bas droit
 prendre(p_DBgauche).%diagonale bas gauche
 
-%Droper
+%Droper 8 possibilités
 drop(d_haut).     %haut
 drop(d_bas).      %bas
 drop(d_gauche).   %gauche
@@ -92,7 +85,27 @@ drop(d_DHgauche). %diagonale haut gauche
 drop(d_DBdroite). %diagonale bas droit
 drop(d_DBgauche). %diagonale bas gauche
 
-%Passer
+%Attaquer à vide
+attaquer(a_haut).     %haut
+attaquer(a_bas).      %bas
+attaquer(a_droite).   %droite
+attaquer(a_gauche).   %gauche
+attaquer(a_DHdroite). %diagonale haut droit
+attaquer(a_DHgauche). %diagonale haut gauche
+attaquer(a_DBdroite). %diagonale bas droit
+attaquer(a_DBgauche). %diagonale bas gauche
+
+%Attaquer avec une charge
+attaquer_ch(a_haut_ch).     %haut
+attaquer_ch(a_bas_ch).      %bas
+attaquer_ch(a_droite_ch).   %droite
+attaquer_ch(a_gauche_ch).   %gauche
+attaquer_ch(a_DHdroite_ch). %diagonale haut droit
+attaquer_ch(a_DHgauche_ch). %diagonale haut gauche
+attaquer_ch(a_DBdroite_ch). %diagonale bas droit
+attaquer_ch(a_DBgauche_ch). %diagonale bas gauche
+
+%Passer son tour
 passer().
 %----------------------------------------------------------
 
